@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="javascriptreact">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+
+</head>
+
+<body>
+    <h2></h2>
+
+</body>
+<script>
+    // how to use reduce -> Reduce method of array gives a final value which takes an arrow function with two arguments accumulator which store the final value after every iteration and 2nd argument is current value of array.
+
+    let array = [1, 2, 3, 4];
+    const sum = array.reduce((accumulator, curval) => {
+        return accumulator + curval;
+    })
+    const heading = document.querySelector("h2");
+    heading.innerText = sum;
+
+
+    // isEven is callback function here which pass in printFucntion as argument 
+    const isEven = (n) => {
+        return n % 2 == 0;
+    }
+    const printFunction = (callbackFunction, num) => {
+        const isNumeven = callbackFunction(num);
+        document.write(`the ${num} is even: ${isNumeven}`);
+    }
+    printFunction(isEven, 5);
+
+    // map is method of array which takes an arrow function with one argument and return a new array with some changes (jo bhi humne operation arrow function k ander likha hoga ) it does not mutate the original array return new array.
+    const numbers = [10, 12, 14];
+    const print = numbers.map((number) => {
+        return 10 + number;
+    })
+    document.write(print);
+
+    //foreach loop takes a arrow function and it mutate the original array. 
+    const nums = [10, 12, 14];
+    nums.forEach((num) => {
+        document.write(num + 5);
+    })
+
+    //filter method filter the elements of array based on condition we provided in the function and return new array.
+    const randomNumbers = [10,6, 12, 14, 15, 19, 3];
+    const newarray = randomNumbers.filter((element) => {
+         return element % 2 == 0;
+        }
+    )
+    document.write(newarray);
+    // objects
+
+
+
+
+</script>
+
+</html>
